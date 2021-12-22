@@ -16,7 +16,31 @@ namespace GuessingGameThreeTries
             Random rnd = new Random();
             int cpuNumber = rnd.Next(1, 11);
 
-            while (
+            while (i < 3)
+            {
+                Console.WriteLine("Sisesta arvatav number");
+                int usernumber = Convert.ToInt32(Console.ReadLine());
+
+                if (usernumber == cpuNumber)
+                {
+                    Console.WriteLine("Tubli, arvasid ära. Oled võitnud!");
+
+                    break;
+                }
+                else
+                {
+
+                    i++;
+                    Console.WriteLine($"Vale number, proovi uuesti {3 - i} katset jaanud!");
+
+                }
+
+
+            }
+
+
+            Console.WriteLine($"Arvatav number oli {cpuNumber}");
+            Console.WriteLine("Kena paeva jatku!");
         }
     }
 }
